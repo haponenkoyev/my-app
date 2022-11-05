@@ -1,0 +1,39 @@
+<div>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" [(ngModel)]="amountFrom" (ngModelChange)="exchangeLeft.emit({amount: amountFrom, currencyFrom: currencyFrom, currencyTo: currencyTo})">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Currency</mat-label>
+      <mat-select
+        [(ngModel)]="currencyFrom"
+        (ngModelChange)="exchangeLeft.emit({amount: amountFrom, currencyFrom: currencyFrom, currencyTo: currencyTo})"
+        name="currency"
+      >
+        <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+          {{currency.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+  <mat-icon>swap_horiz</mat-icon> 
+
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Amount</mat-label>
+    <input [(ngModel)]="amountTo" matInput type="number" (ngModelChange)="exchangeRight.emit({amount: amountTo, currencyFrom: currencyTo, currencyTo: currencyFrom})" > 
+  </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Currency</mat-label>
+      <mat-select [(ngModel)]="currencyTo" (ngModelChange)="exchangeRight.emit({amount: amountTo, currencyFrom: currencyTo, currencyTo: currencyFrom})" name="currency">
+        <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+          {{currency.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+
+     

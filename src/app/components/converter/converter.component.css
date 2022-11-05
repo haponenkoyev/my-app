@@ -1,0 +1,21 @@
+div {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+mat-form-field {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+}
+
+mat-icon {
+    color: darkgrey;
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    font-size: 40px;
+}
+
+
